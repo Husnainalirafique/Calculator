@@ -5,12 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.security.PublicKey;
 
 public class MainActivity extends AppCompatActivity {
     //Declaring editText , text view, buttons
@@ -42,15 +47,25 @@ public class MainActivity extends AppCompatActivity {
         subtract= findViewById(R.id.btSubtract);
         multiply= findViewById(R.id.btMultiply);
         divide= findViewById(R.id.btDivide);
+
+
         add.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                int firstValue, secondValue, ans;
-                firstValue = Integer.parseInt(etFirstValue.getText().toString());
-                secondValue= Integer.parseInt(etSecondValue.getText().toString());
-                ans= firstValue + secondValue;
-                tvAns.setText(firstValue + "+" + secondValue + " = " + ans);
+                String first_value1=etFirstValue.getText().toString().trim();
+                String second_value1=etFirstValue.getText().toString().trim();
+                if(first_value1.isEmpty() && second_value1.isEmpty())
+                {
+                    return;
+                }
+                else {
+                    int firstValue, secondValue, ans;
+                    firstValue = Integer.parseInt(etFirstValue.getText().toString());
+                    secondValue = Integer.parseInt(etSecondValue.getText().toString());
+                    ans = firstValue + secondValue;
+                    tvAns.setText(firstValue + "+" + secondValue + " = " + ans);
+                }
             }
         });
 
@@ -58,33 +73,57 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                int firstValue, secondValue, ans;
-                firstValue = Integer.parseInt(etFirstValue.getText().toString());
-                secondValue= Integer.parseInt(etSecondValue.getText().toString());
-                ans= firstValue - secondValue;
-                tvAns.setText(firstValue+"-"+secondValue+" = "+ans);
+                String first_value1=etFirstValue.getText().toString().trim();
+                String second_value1=etFirstValue.getText().toString().trim();
+                if(first_value1.isEmpty() && second_value1.isEmpty())
+                {
+                   return;
+                }
+                else {
+                    int firstValue, secondValue, ans;
+                    firstValue = Integer.parseInt(etFirstValue.getText().toString());
+                    secondValue = Integer.parseInt(etSecondValue.getText().toString());
+                    ans = firstValue - secondValue;
+                    tvAns.setText(firstValue + "-" + secondValue + " = " + ans);
+                }
             }
         });
         multiply.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                int firstValue, secondValue, ans;
-                firstValue = Integer.parseInt(etFirstValue.getText().toString());
-                secondValue= Integer.parseInt(etSecondValue.getText().toString());
-                ans= firstValue * secondValue;
-                tvAns.setText(firstValue+"×"+secondValue+" = "+ans);
+                String first_value1=etFirstValue.getText().toString().trim();
+                String second_value1=etFirstValue.getText().toString().trim();
+                if(first_value1.isEmpty() && second_value1.isEmpty())
+                {
+                    return;
+                }
+                else {
+                    int firstValue, secondValue, ans;
+                    firstValue = Integer.parseInt(etFirstValue.getText().toString());
+                    secondValue = Integer.parseInt(etSecondValue.getText().toString());
+                    ans = firstValue * secondValue;
+                    tvAns.setText(firstValue + "×" + secondValue + " = " + ans);
+                }
             }
         });
         divide.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                int firstValue, secondValue, ans;
-                firstValue = Integer.parseInt(etFirstValue.getText().toString());
-                secondValue= Integer.parseInt(etSecondValue.getText().toString());
-                ans= firstValue / secondValue;
-                tvAns.setText(firstValue+"÷"+secondValue+" = "+ans);
+                String first_value1=etFirstValue.getText().toString().trim();
+                String second_value1=etFirstValue.getText().toString().trim();
+                if(first_value1.isEmpty() && second_value1.isEmpty())
+                {
+                   return;
+                }
+                else {
+                    int firstValue, secondValue, ans;
+                    firstValue = Integer.parseInt(etFirstValue.getText().toString());
+                    secondValue = Integer.parseInt(etSecondValue.getText().toString());
+                    ans = firstValue / secondValue;
+                    tvAns.setText(firstValue + "÷" + secondValue + " = " + ans);
+                }
             }
         });
     }

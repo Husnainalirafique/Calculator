@@ -24,4 +24,5 @@
         android:layout_marginBottom="100dp"
         android:text="@string/all_rights_are_reserved"
         android:textSize="15sp" />
+
 </RelativeLayout>
